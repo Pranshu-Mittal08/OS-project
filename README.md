@@ -1,3 +1,4 @@
+HEAD
 # SMART-TRAFFIC: Intelligent Traffic Management Simulator
 ### Using CPU Scheduling and Task Scheduling Algorithms
 
@@ -314,3 +315,5 @@ The project includes 17 automated tests in `tests.cpp` validating every requirem
 - **Multi-Intersection Network Coordination**: Connect multiple adjacent intersections in a green-wave arterial corridor.
 - **V2X (Vehicle-to-Infrastructure) Telemetry**: Ingest real-time GPS coordinates and speed vectors from connected vehicles.
 - **Machine Learning Reinforcement Learning Agent**: Compare classic OS heuristic schedulers against Deep Q-Network (DQN) traffic signal controllers.
+# OS-project
+ea78c388f7a8b0d30974113f30eb6727bd2b324e
