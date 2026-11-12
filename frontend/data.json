@@ -1,0 +1,1311 @@
+{
+  "trafficScenarios": {
+    "morningRush": {
+    "fcfs": {
+  "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 22.66,
+  "maxWaitingTime": 48,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 3,
+  "trafficThroughput": 0.84,
+  "signalUtilization": 83.56,
+  "totalSimulationTime": 73,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 22, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 43, "waitingTime": 25, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 50, "waitingTime": 43, "missedDeadline": true},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 56, "waitingTime": 48, "missedDeadline": true},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 73, "waitingTime": 44, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 22, "duration": 22, "vehiclesPassed": 22},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 25, "endTime": 43, "duration": 18, "vehiclesPassed": 18},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 43, "endTime": 45, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 45, "endTime": 46, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 46, "endTime": 50, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 50, "endTime": 52, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 52, "endTime": 53, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 53, "endTime": 56, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 56, "endTime": 58, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 58, "endTime": 59, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 59, "endTime": 73, "duration": 14, "vehiclesPassed": 14}
+  ]
+},
+    "priority": {
+  "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 22.62,
+  "maxWaitingTime": 66,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 2,
+  "trafficThroughput": 0.82,
+  "signalUtilization": 83.78,
+  "totalSimulationTime": 74,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 23, "waitingTime": 1, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 44, "waitingTime": 26, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 68, "waitingTime": 61, "missedDeadline": true},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 74, "waitingTime": 66, "missedDeadline": true},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 61, "waitingTime": 32, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 20, "duration": 20, "vehiclesPassed": 20},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 20, "endTime": 23, "duration": 3, "vehiclesPassed": 2},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 23, "endTime": 25, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 25, "endTime": 26, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 26, "endTime": 44, "duration": 18, "vehiclesPassed": 18},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 44, "endTime": 46, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 46, "endTime": 47, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 47, "endTime": 61, "duration": 14, "vehiclesPassed": 14},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 61, "endTime": 63, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 63, "endTime": 64, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 64, "endTime": 68, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 68, "endTime": 70, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 70, "endTime": 71, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 71, "endTime": 74, "duration": 3, "vehiclesPassed": 3}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+  "timeQuantum": 6,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 53.93,
+  "maxWaitingTime": 61,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 3,
+  "trafficThroughput": 0.72,
+  "signalUtilization": 71.76,
+  "totalSimulationTime": 85,
+  "totalClearanceTime": 24,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 83, "waitingTime": 61, "missedDeadline": true},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 76, "waitingTime": 58, "missedDeadline": true},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 22, "waitingTime": 15, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 28, "waitingTime": 20, "missedDeadline": false},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 85, "waitingTime": 56, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 6, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 6, "endTime": 8, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 8, "endTime": 9, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 9, "endTime": 15, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 15, "endTime": 17, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 17, "endTime": 18, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 18, "endTime": 22, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 25, "endTime": 28, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 28, "endTime": 30, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 30, "endTime": 31, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 31, "endTime": 37, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 37, "endTime": 43, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 43, "endTime": 45, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 45, "endTime": 46, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 46, "endTime": 52, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 52, "endTime": 54, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 54, "endTime": 55, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 55, "endTime": 61, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 61, "endTime": 67, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 67, "endTime": 69, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 69, "endTime": 70, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 70, "endTime": 76, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 76, "endTime": 78, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 78, "endTime": 79, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 79, "endTime": 83, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 83, "endTime": 85, "duration": 2, "vehiclesPassed": 2}
+  ]
+},
+    "edf": {
+  "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 24.08,
+  "maxWaitingTime": 44,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 2,
+  "trafficThroughput": 0.84,
+  "signalUtilization": 83.56,
+  "totalSimulationTime": 73,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 22, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 56, "waitingTime": 38, "missedDeadline": true},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 29, "waitingTime": 22, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 35, "waitingTime": 27, "missedDeadline": false},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 73, "waitingTime": 44, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 22, "duration": 22, "vehiclesPassed": 22},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 25, "endTime": 29, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 29, "endTime": 31, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 31, "endTime": 32, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 32, "endTime": 35, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 35, "endTime": 37, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 37, "endTime": 38, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 38, "endTime": 56, "duration": 18, "vehiclesPassed": 18},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 56, "endTime": 58, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 58, "endTime": 59, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 59, "endTime": 73, "duration": 14, "vehiclesPassed": 14}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 22.66,
+    "maxWaitingTime": 48,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 3,
+    "trafficThroughput": 0.84,
+    "signalUtilization": 83.56,
+    "totalSimulationTime": 73,
+    "totalClearanceTime": 12
+  },
+  {
+    "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 22.62,
+    "maxWaitingTime": 66,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 2,
+    "trafficThroughput": 0.82,
+    "signalUtilization": 83.78,
+    "totalSimulationTime": 74,
+    "totalClearanceTime": 12
+  },
+  {
+    "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 53.93,
+    "maxWaitingTime": 61,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 3,
+    "trafficThroughput": 0.72,
+    "signalUtilization": 71.76,
+    "totalSimulationTime": 85,
+    "totalClearanceTime": 24
+  },
+  {
+    "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 24.08,
+    "maxWaitingTime": 44,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 2,
+    "trafficThroughput": 0.84,
+    "signalUtilization": 83.56,
+    "totalSimulationTime": 73,
+    "totalClearanceTime": 12
+  }
+]
+  },
+    "balanced": {
+    "fcfs": {
+  "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 13.10,
+  "maxWaitingTime": 31,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 2,
+  "trafficThroughput": 0.77,
+  "signalUtilization": 76.92,
+  "totalSimulationTime": 39,
+  "totalClearanceTime": 9,
+  "tasks": [
+    {"taskId": 1, "roadName": "West", "arrivalTime": 0, "waitingVehicles": 3, "hasEmergency": false, "deadline": 18, "completionTime": 3, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "North", "arrivalTime": 1, "waitingVehicles": 14, "hasEmergency": false, "deadline": 40, "completionTime": 20, "waitingTime": 5, "missedDeadline": false},
+    {"taskId": 3, "roadName": "South", "arrivalTime": 2, "waitingVehicles": 8, "hasEmergency": false, "deadline": 30, "completionTime": 31, "waitingTime": 21, "missedDeadline": true},
+    {"taskId": 4, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 5, "hasEmergency": false, "deadline": 25, "completionTime": 39, "waitingTime": 31, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "West", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 6, "endTime": 20, "duration": 14, "vehiclesPassed": 14},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 20, "endTime": 22, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 22, "endTime": 23, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 23, "endTime": 31, "duration": 8, "vehiclesPassed": 8},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 31, "endTime": 33, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 33, "endTime": 34, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 34, "endTime": 39, "duration": 5, "vehiclesPassed": 5}
+  ]
+},
+    "priority": {
+  "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 13.10,
+  "maxWaitingTime": 31,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 2,
+  "trafficThroughput": 0.77,
+  "signalUtilization": 76.92,
+  "totalSimulationTime": 39,
+  "totalClearanceTime": 9,
+  "tasks": [
+    {"taskId": 1, "roadName": "West", "arrivalTime": 0, "waitingVehicles": 3, "hasEmergency": false, "deadline": 18, "completionTime": 3, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "North", "arrivalTime": 1, "waitingVehicles": 14, "hasEmergency": false, "deadline": 40, "completionTime": 20, "waitingTime": 5, "missedDeadline": false},
+    {"taskId": 3, "roadName": "South", "arrivalTime": 2, "waitingVehicles": 8, "hasEmergency": false, "deadline": 30, "completionTime": 31, "waitingTime": 21, "missedDeadline": true},
+    {"taskId": 4, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 5, "hasEmergency": false, "deadline": 25, "completionTime": 39, "waitingTime": 31, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "West", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 6, "endTime": 20, "duration": 14, "vehiclesPassed": 14},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 20, "endTime": 22, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 22, "endTime": 23, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 23, "endTime": 31, "duration": 8, "vehiclesPassed": 8},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 31, "endTime": 33, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 33, "endTime": 34, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 34, "endTime": 39, "duration": 5, "vehiclesPassed": 5}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+  "timeQuantum": 6,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 27.70,
+  "maxWaitingTime": 33,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 3,
+  "trafficThroughput": 0.62,
+  "signalUtilization": 62.50,
+  "totalSimulationTime": 48,
+  "totalClearanceTime": 18,
+  "tasks": [
+    {"taskId": 1, "roadName": "West", "arrivalTime": 0, "waitingVehicles": 3, "hasEmergency": false, "deadline": 18, "completionTime": 3, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "North", "arrivalTime": 1, "waitingVehicles": 14, "hasEmergency": false, "deadline": 40, "completionTime": 48, "waitingTime": 33, "missedDeadline": true},
+    {"taskId": 3, "roadName": "South", "arrivalTime": 2, "waitingVehicles": 8, "hasEmergency": false, "deadline": 30, "completionTime": 43, "waitingTime": 33, "missedDeadline": true},
+    {"taskId": 4, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 5, "hasEmergency": false, "deadline": 25, "completionTime": 29, "waitingTime": 21, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "West", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 6, "endTime": 12, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 12, "endTime": 14, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 14, "endTime": 15, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 15, "endTime": 21, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 21, "endTime": 23, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 23, "endTime": 24, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 24, "endTime": 29, "duration": 5, "vehiclesPassed": 5},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 29, "endTime": 31, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 31, "endTime": 32, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 32, "endTime": 38, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 38, "endTime": 40, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 40, "endTime": 41, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 41, "endTime": 43, "duration": 2, "vehiclesPassed": 2},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 43, "endTime": 45, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 45, "endTime": 46, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 46, "endTime": 48, "duration": 2, "vehiclesPassed": 2}
+  ]
+},
+    "edf": {
+  "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 14.90,
+  "maxWaitingTime": 24,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 0,
+  "trafficThroughput": 0.77,
+  "signalUtilization": 76.92,
+  "totalSimulationTime": 39,
+  "totalClearanceTime": 9,
+  "tasks": [
+    {"taskId": 1, "roadName": "West", "arrivalTime": 0, "waitingVehicles": 3, "hasEmergency": false, "deadline": 18, "completionTime": 3, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "North", "arrivalTime": 1, "waitingVehicles": 14, "hasEmergency": false, "deadline": 40, "completionTime": 39, "waitingTime": 24, "missedDeadline": false},
+    {"taskId": 3, "roadName": "South", "arrivalTime": 2, "waitingVehicles": 8, "hasEmergency": false, "deadline": 30, "completionTime": 22, "waitingTime": 12, "missedDeadline": false},
+    {"taskId": 4, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 5, "hasEmergency": false, "deadline": 25, "completionTime": 11, "waitingTime": 3, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "West", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 6, "endTime": 11, "duration": 5, "vehiclesPassed": 5},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 11, "endTime": 13, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 13, "endTime": 14, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 14, "endTime": 22, "duration": 8, "vehiclesPassed": 8},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 25, "endTime": 39, "duration": 14, "vehiclesPassed": 14}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 13.10,
+    "maxWaitingTime": 31,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 2,
+    "trafficThroughput": 0.77,
+    "signalUtilization": 76.92,
+    "totalSimulationTime": 39,
+    "totalClearanceTime": 9
+  },
+  {
+    "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 13.10,
+    "maxWaitingTime": 31,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 2,
+    "trafficThroughput": 0.77,
+    "signalUtilization": 76.92,
+    "totalSimulationTime": 39,
+    "totalClearanceTime": 9
+  },
+  {
+    "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 27.70,
+    "maxWaitingTime": 33,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 3,
+    "trafficThroughput": 0.62,
+    "signalUtilization": 62.50,
+    "totalSimulationTime": 48,
+    "totalClearanceTime": 18
+  },
+  {
+    "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 14.90,
+    "maxWaitingTime": 24,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 0,
+    "trafficThroughput": 0.77,
+    "signalUtilization": 76.92,
+    "totalSimulationTime": 39,
+    "totalClearanceTime": 9
+  }
+]
+  },
+    "emergency": {
+    "fcfs": {
+  "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 18.40,
+  "maxWaitingTime": 33,
+  "emergencyAvgWaitingTime": 3.00,
+  "deadlineMisses": 0,
+  "trafficThroughput": 0.70,
+  "signalUtilization": 72.09,
+  "totalSimulationTime": 43,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 12, "hasEmergency": false, "deadline": 45, "completionTime": 21, "waitingTime": 9, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 10, "hasEmergency": false, "deadline": 45, "completionTime": 34, "waitingTime": 24, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 2, "hasEmergency": true, "deadline": 20, "completionTime": 9, "waitingTime": 3, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 4, "waitingVehicles": 6, "hasEmergency": false, "deadline": 50, "completionTime": 43, "waitingTime": 33, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 6, "endTime": 9, "duration": 3, "vehiclesPassed": 2},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 9, "endTime": 11, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 11, "endTime": 12, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 12, "endTime": 21, "duration": 9, "vehiclesPassed": 9},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 21, "endTime": 23, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 23, "endTime": 24, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 24, "endTime": 34, "duration": 10, "vehiclesPassed": 10},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 34, "endTime": 36, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 36, "endTime": 37, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 37, "endTime": 43, "duration": 6, "vehiclesPassed": 6}
+  ]
+},
+    "priority": {
+  "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 18.40,
+  "maxWaitingTime": 33,
+  "emergencyAvgWaitingTime": 3.00,
+  "deadlineMisses": 0,
+  "trafficThroughput": 0.70,
+  "signalUtilization": 72.09,
+  "totalSimulationTime": 43,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 12, "hasEmergency": false, "deadline": 45, "completionTime": 21, "waitingTime": 9, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 10, "hasEmergency": false, "deadline": 45, "completionTime": 34, "waitingTime": 24, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 2, "hasEmergency": true, "deadline": 20, "completionTime": 9, "waitingTime": 3, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 4, "waitingVehicles": 6, "hasEmergency": false, "deadline": 50, "completionTime": 43, "waitingTime": 33, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 6, "endTime": 9, "duration": 3, "vehiclesPassed": 2},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 9, "endTime": 11, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 11, "endTime": 12, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 12, "endTime": 21, "duration": 9, "vehiclesPassed": 9},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 21, "endTime": 23, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 23, "endTime": 24, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 24, "endTime": 34, "duration": 10, "vehiclesPassed": 10},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 34, "endTime": 36, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 36, "endTime": 37, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 37, "endTime": 43, "duration": 6, "vehiclesPassed": 6}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+  "timeQuantum": 6,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 31.20,
+  "maxWaitingTime": 37,
+  "emergencyAvgWaitingTime": 3.00,
+  "deadlineMisses": 1,
+  "trafficThroughput": 0.61,
+  "signalUtilization": 63.27,
+  "totalSimulationTime": 49,
+  "totalClearanceTime": 18,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 12, "hasEmergency": false, "deadline": 45, "completionTime": 49, "waitingTime": 37, "missedDeadline": true},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 10, "hasEmergency": false, "deadline": 45, "completionTime": 43, "waitingTime": 33, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 2, "hasEmergency": true, "deadline": 20, "completionTime": 9, "waitingTime": 3, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 4, "waitingVehicles": 6, "hasEmergency": false, "deadline": 50, "completionTime": 36, "waitingTime": 26, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 6, "endTime": 9, "duration": 3, "vehiclesPassed": 2},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 9, "endTime": 11, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 11, "endTime": 12, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 12, "endTime": 18, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 18, "endTime": 20, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 20, "endTime": 21, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 21, "endTime": 27, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 27, "endTime": 29, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 29, "endTime": 30, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 30, "endTime": 36, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 36, "endTime": 38, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 38, "endTime": 39, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 39, "endTime": 43, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 43, "endTime": 45, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 45, "endTime": 46, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 46, "endTime": 49, "duration": 3, "vehiclesPassed": 3}
+  ]
+},
+    "edf": {
+  "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 30,
+  "avgVehicleWaitingTime": 18.40,
+  "maxWaitingTime": 33,
+  "emergencyAvgWaitingTime": 3.00,
+  "deadlineMisses": 0,
+  "trafficThroughput": 0.70,
+  "signalUtilization": 72.09,
+  "totalSimulationTime": 43,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 12, "hasEmergency": false, "deadline": 45, "completionTime": 21, "waitingTime": 9, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 10, "hasEmergency": false, "deadline": 45, "completionTime": 34, "waitingTime": 24, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 2, "hasEmergency": true, "deadline": 20, "completionTime": 9, "waitingTime": 3, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 4, "waitingVehicles": 6, "hasEmergency": false, "deadline": 50, "completionTime": 43, "waitingTime": 33, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 3, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 3, "endTime": 5, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 5, "endTime": 6, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 6, "endTime": 9, "duration": 3, "vehiclesPassed": 2},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 9, "endTime": 11, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 11, "endTime": 12, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 12, "endTime": 21, "duration": 9, "vehiclesPassed": 9},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 21, "endTime": 23, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 23, "endTime": 24, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 24, "endTime": 34, "duration": 10, "vehiclesPassed": 10},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 34, "endTime": 36, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 36, "endTime": 37, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 37, "endTime": 43, "duration": 6, "vehiclesPassed": 6}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 18.40,
+    "maxWaitingTime": 33,
+    "emergencyAvgWaitingTime": 3.00,
+    "deadlineMisses": 0,
+    "trafficThroughput": 0.70,
+    "signalUtilization": 72.09,
+    "totalSimulationTime": 43,
+    "totalClearanceTime": 12
+  },
+  {
+    "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 18.40,
+    "maxWaitingTime": 33,
+    "emergencyAvgWaitingTime": 3.00,
+    "deadlineMisses": 0,
+    "trafficThroughput": 0.70,
+    "signalUtilization": 72.09,
+    "totalSimulationTime": 43,
+    "totalClearanceTime": 12
+  },
+  {
+    "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 31.20,
+    "maxWaitingTime": 37,
+    "emergencyAvgWaitingTime": 3.00,
+    "deadlineMisses": 1,
+    "trafficThroughput": 0.61,
+    "signalUtilization": 63.27,
+    "totalSimulationTime": 49,
+    "totalClearanceTime": 18
+  },
+  {
+    "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 30,
+    "avgVehicleWaitingTime": 18.40,
+    "maxWaitingTime": 33,
+    "emergencyAvgWaitingTime": 3.00,
+    "deadlineMisses": 0,
+    "trafficThroughput": 0.70,
+    "signalUtilization": 72.09,
+    "totalSimulationTime": 43,
+    "totalClearanceTime": 12
+  }
+]
+  },
+    "custom": {
+    "fcfs": {
+  "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 22.66,
+  "maxWaitingTime": 48,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 3,
+  "trafficThroughput": 0.84,
+  "signalUtilization": 83.56,
+  "totalSimulationTime": 73,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 22, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 43, "waitingTime": 25, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 50, "waitingTime": 43, "missedDeadline": true},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 56, "waitingTime": 48, "missedDeadline": true},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 73, "waitingTime": 44, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 22, "duration": 22, "vehiclesPassed": 22},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 25, "endTime": 43, "duration": 18, "vehiclesPassed": 18},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 43, "endTime": 45, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 45, "endTime": 46, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 46, "endTime": 50, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 50, "endTime": 52, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 52, "endTime": 53, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 53, "endTime": 56, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 56, "endTime": 58, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 58, "endTime": 59, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 59, "endTime": 73, "duration": 14, "vehiclesPassed": 14}
+  ]
+},
+    "priority": {
+  "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 22.62,
+  "maxWaitingTime": 66,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 2,
+  "trafficThroughput": 0.82,
+  "signalUtilization": 83.78,
+  "totalSimulationTime": 74,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 23, "waitingTime": 1, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 44, "waitingTime": 26, "missedDeadline": false},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 68, "waitingTime": 61, "missedDeadline": true},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 74, "waitingTime": 66, "missedDeadline": true},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 61, "waitingTime": 32, "missedDeadline": false}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 20, "duration": 20, "vehiclesPassed": 20},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 20, "endTime": 23, "duration": 3, "vehiclesPassed": 2},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 23, "endTime": 25, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 25, "endTime": 26, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 26, "endTime": 44, "duration": 18, "vehiclesPassed": 18},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 44, "endTime": 46, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 46, "endTime": 47, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 47, "endTime": 61, "duration": 14, "vehiclesPassed": 14},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 61, "endTime": 63, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 63, "endTime": 64, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 64, "endTime": 68, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 68, "endTime": 70, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 70, "endTime": 71, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 71, "endTime": 74, "duration": 3, "vehiclesPassed": 3}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+  "timeQuantum": 6,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 53.93,
+  "maxWaitingTime": 61,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 3,
+  "trafficThroughput": 0.72,
+  "signalUtilization": 71.76,
+  "totalSimulationTime": 85,
+  "totalClearanceTime": 24,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 83, "waitingTime": 61, "missedDeadline": true},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 76, "waitingTime": 58, "missedDeadline": true},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 22, "waitingTime": 15, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 28, "waitingTime": 20, "missedDeadline": false},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 85, "waitingTime": 56, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 6, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 6, "endTime": 8, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 8, "endTime": 9, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 9, "endTime": 15, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 15, "endTime": 17, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 17, "endTime": 18, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 18, "endTime": 22, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 25, "endTime": 28, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 28, "endTime": 30, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 30, "endTime": 31, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 31, "endTime": 37, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 37, "endTime": 43, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 43, "endTime": 45, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 45, "endTime": 46, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 46, "endTime": 52, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 52, "endTime": 54, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 54, "endTime": 55, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 55, "endTime": 61, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 61, "endTime": 67, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 67, "endTime": 69, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 69, "endTime": 70, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 70, "endTime": 76, "duration": 6, "vehiclesPassed": 6},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 76, "endTime": 78, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 78, "endTime": 79, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 79, "endTime": 83, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 83, "endTime": 85, "duration": 2, "vehiclesPassed": 2}
+  ]
+},
+    "edf": {
+  "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+  "timeQuantum": 0,
+  "totalVehiclesServed": 61,
+  "avgVehicleWaitingTime": 24.08,
+  "maxWaitingTime": 44,
+  "emergencyAvgWaitingTime": 0.00,
+  "deadlineMisses": 2,
+  "trafficThroughput": 0.84,
+  "signalUtilization": 83.56,
+  "totalSimulationTime": 73,
+  "totalClearanceTime": 12,
+  "tasks": [
+    {"taskId": 1, "roadName": "North", "arrivalTime": 0, "waitingVehicles": 22, "hasEmergency": false, "deadline": 50, "completionTime": 22, "waitingTime": 0, "missedDeadline": false},
+    {"taskId": 2, "roadName": "South", "arrivalTime": 0, "waitingVehicles": 18, "hasEmergency": false, "deadline": 55, "completionTime": 56, "waitingTime": 38, "missedDeadline": true},
+    {"taskId": 3, "roadName": "East", "arrivalTime": 3, "waitingVehicles": 4, "hasEmergency": false, "deadline": 40, "completionTime": 29, "waitingTime": 22, "missedDeadline": false},
+    {"taskId": 4, "roadName": "West", "arrivalTime": 5, "waitingVehicles": 3, "hasEmergency": false, "deadline": 40, "completionTime": 35, "waitingTime": 27, "missedDeadline": false},
+    {"taskId": 5, "roadName": "North", "arrivalTime": 15, "waitingVehicles": 14, "hasEmergency": false, "deadline": 65, "completionTime": 73, "waitingTime": 44, "missedDeadline": true}
+  ],
+  "signalTimeline": [
+    {"roadName": "North", "signalState": "GREEN", "startTime": 0, "endTime": 22, "duration": 22, "vehiclesPassed": 22},
+    {"roadName": "North", "signalState": "YELLOW", "startTime": 22, "endTime": 24, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 24, "endTime": 25, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "East", "signalState": "GREEN", "startTime": 25, "endTime": 29, "duration": 4, "vehiclesPassed": 4},
+    {"roadName": "East", "signalState": "YELLOW", "startTime": 29, "endTime": 31, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 31, "endTime": 32, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "West", "signalState": "GREEN", "startTime": 32, "endTime": 35, "duration": 3, "vehiclesPassed": 3},
+    {"roadName": "West", "signalState": "YELLOW", "startTime": 35, "endTime": 37, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 37, "endTime": 38, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "South", "signalState": "GREEN", "startTime": 38, "endTime": 56, "duration": 18, "vehiclesPassed": 18},
+    {"roadName": "South", "signalState": "YELLOW", "startTime": 56, "endTime": 58, "duration": 2, "vehiclesPassed": 0},
+    {"roadName": "ALL", "signalState": "ALL_RED", "startTime": 58, "endTime": 59, "duration": 1, "vehiclesPassed": 0},
+    {"roadName": "North", "signalState": "GREEN", "startTime": 59, "endTime": 73, "duration": 14, "vehiclesPassed": 14}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "Traffic FCFS (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 22.66,
+    "maxWaitingTime": 48,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 3,
+    "trafficThroughput": 0.84,
+    "signalUtilization": 83.56,
+    "totalSimulationTime": 73,
+    "totalClearanceTime": 12
+  },
+  {
+    "algorithm": "Traffic Priority (Density + Wait + Aging + Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 22.62,
+    "maxWaitingTime": 66,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 2,
+    "trafficThroughput": 0.82,
+    "signalUtilization": 83.78,
+    "totalSimulationTime": 74,
+    "totalClearanceTime": 12
+  },
+  {
+    "algorithm": "Traffic Round Robin (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 53.93,
+    "maxWaitingTime": 61,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 3,
+    "trafficThroughput": 0.72,
+    "signalUtilization": 71.76,
+    "totalSimulationTime": 85,
+    "totalClearanceTime": 24
+  },
+  {
+    "algorithm": "Traffic Earliest Deadline First (with Universal Emergency Preemption)",
+    "totalVehiclesServed": 61,
+    "avgVehicleWaitingTime": 24.08,
+    "maxWaitingTime": 44,
+    "emergencyAvgWaitingTime": 0.00,
+    "deadlineMisses": 2,
+    "trafficThroughput": 0.84,
+    "signalUtilization": 83.56,
+    "totalSimulationTime": 73,
+    "totalClearanceTime": 12
+  }
+]
+  }
+  },
+  "cpuScenarios": {
+    "standard": {
+    "fcfs": {
+  "algorithm": "FCFS (First Come First Serve)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 8.75,
+  "avgTurnaroundTime": 15.25,
+  "avgResponseTime": 8.75,
+  "cpuUtilization": 100.00,
+  "throughput": 0.15,
+  "totalTime": 26,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 8, "turnaroundTime": 8, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 1, "burstTime": 4, "priority": 1, "completionTime": 12, "turnaroundTime": 11, "waitingTime": 7, "responseTime": 7},
+    {"id": 3, "arrivalTime": 2, "burstTime": 9, "priority": 4, "completionTime": 21, "turnaroundTime": 19, "waitingTime": 10, "responseTime": 10},
+    {"id": 4, "arrivalTime": 3, "burstTime": 5, "priority": 2, "completionTime": 26, "turnaroundTime": 23, "waitingTime": 18, "responseTime": 18}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 8},
+    {"processId": 2, "startTime": 8, "endTime": 12},
+    {"processId": 3, "startTime": 12, "endTime": 21},
+    {"processId": 4, "startTime": 21, "endTime": 26}
+  ]
+},
+    "sjf": {
+  "algorithm": "SJF (Shortest Job First - Non-Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 7.75,
+  "avgTurnaroundTime": 14.25,
+  "avgResponseTime": 7.75,
+  "cpuUtilization": 100.00,
+  "throughput": 0.15,
+  "totalTime": 26,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 8, "turnaroundTime": 8, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 1, "burstTime": 4, "priority": 1, "completionTime": 12, "turnaroundTime": 11, "waitingTime": 7, "responseTime": 7},
+    {"id": 3, "arrivalTime": 2, "burstTime": 9, "priority": 4, "completionTime": 26, "turnaroundTime": 24, "waitingTime": 15, "responseTime": 15},
+    {"id": 4, "arrivalTime": 3, "burstTime": 5, "priority": 2, "completionTime": 17, "turnaroundTime": 14, "waitingTime": 9, "responseTime": 9}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 8},
+    {"processId": 2, "startTime": 8, "endTime": 12},
+    {"processId": 4, "startTime": 12, "endTime": 17},
+    {"processId": 3, "startTime": 17, "endTime": 26}
+  ]
+},
+    "priorityNonPreemptive": {
+  "algorithm": "Priority Scheduling (Non-Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 7.75,
+  "avgTurnaroundTime": 14.25,
+  "avgResponseTime": 7.75,
+  "cpuUtilization": 100.00,
+  "throughput": 0.15,
+  "totalTime": 26,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 8, "turnaroundTime": 8, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 1, "burstTime": 4, "priority": 1, "completionTime": 12, "turnaroundTime": 11, "waitingTime": 7, "responseTime": 7},
+    {"id": 3, "arrivalTime": 2, "burstTime": 9, "priority": 4, "completionTime": 26, "turnaroundTime": 24, "waitingTime": 15, "responseTime": 15},
+    {"id": 4, "arrivalTime": 3, "burstTime": 5, "priority": 2, "completionTime": 17, "turnaroundTime": 14, "waitingTime": 9, "responseTime": 9}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 8},
+    {"processId": 2, "startTime": 8, "endTime": 12},
+    {"processId": 4, "startTime": 12, "endTime": 17},
+    {"processId": 3, "startTime": 17, "endTime": 26}
+  ]
+},
+    "priorityPreemptive": {
+  "algorithm": "Priority Scheduling (Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 6.50,
+  "avgTurnaroundTime": 13.00,
+  "avgResponseTime": 4.25,
+  "cpuUtilization": 100.00,
+  "throughput": 0.15,
+  "totalTime": 26,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 17, "turnaroundTime": 17, "waitingTime": 9, "responseTime": 0},
+    {"id": 2, "arrivalTime": 1, "burstTime": 4, "priority": 1, "completionTime": 5, "turnaroundTime": 4, "waitingTime": 0, "responseTime": 0},
+    {"id": 3, "arrivalTime": 2, "burstTime": 9, "priority": 4, "completionTime": 26, "turnaroundTime": 24, "waitingTime": 15, "responseTime": 15},
+    {"id": 4, "arrivalTime": 3, "burstTime": 5, "priority": 2, "completionTime": 10, "turnaroundTime": 7, "waitingTime": 2, "responseTime": 2}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 1},
+    {"processId": 2, "startTime": 1, "endTime": 5},
+    {"processId": 4, "startTime": 5, "endTime": 10},
+    {"processId": 1, "startTime": 10, "endTime": 17},
+    {"processId": 3, "startTime": 17, "endTime": 26}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Round Robin (RR)",
+  "timeQuantum": 3,
+  "avgWaitingTime": 13.50,
+  "avgTurnaroundTime": 20.00,
+  "avgResponseTime": 3.00,
+  "cpuUtilization": 100.00,
+  "throughput": 0.15,
+  "totalTime": 26,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 23, "turnaroundTime": 23, "waitingTime": 15, "responseTime": 0},
+    {"id": 2, "arrivalTime": 1, "burstTime": 4, "priority": 1, "completionTime": 16, "turnaroundTime": 15, "waitingTime": 11, "responseTime": 2},
+    {"id": 3, "arrivalTime": 2, "burstTime": 9, "priority": 4, "completionTime": 26, "turnaroundTime": 24, "waitingTime": 15, "responseTime": 4},
+    {"id": 4, "arrivalTime": 3, "burstTime": 5, "priority": 2, "completionTime": 21, "turnaroundTime": 18, "waitingTime": 13, "responseTime": 6}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 3},
+    {"processId": 2, "startTime": 3, "endTime": 6},
+    {"processId": 3, "startTime": 6, "endTime": 9},
+    {"processId": 4, "startTime": 9, "endTime": 12},
+    {"processId": 1, "startTime": 12, "endTime": 15},
+    {"processId": 2, "startTime": 15, "endTime": 16},
+    {"processId": 3, "startTime": 16, "endTime": 19},
+    {"processId": 4, "startTime": 19, "endTime": 21},
+    {"processId": 1, "startTime": 21, "endTime": 23},
+    {"processId": 3, "startTime": 23, "endTime": 26}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "FCFS (First Come First Serve)",
+    "avgWaitingTime": 8.75,
+    "avgTurnaroundTime": 15.25,
+    "avgResponseTime": 8.75,
+    "cpuUtilization": 100.00,
+    "throughput": 0.15,
+    "totalTime": 26
+  },
+  {
+    "algorithm": "SJF (Shortest Job First - Non-Preemptive)",
+    "avgWaitingTime": 7.75,
+    "avgTurnaroundTime": 14.25,
+    "avgResponseTime": 7.75,
+    "cpuUtilization": 100.00,
+    "throughput": 0.15,
+    "totalTime": 26
+  },
+  {
+    "algorithm": "Priority Scheduling (Non-Preemptive)",
+    "avgWaitingTime": 7.75,
+    "avgTurnaroundTime": 14.25,
+    "avgResponseTime": 7.75,
+    "cpuUtilization": 100.00,
+    "throughput": 0.15,
+    "totalTime": 26
+  },
+  {
+    "algorithm": "Priority Scheduling (Preemptive)",
+    "avgWaitingTime": 6.50,
+    "avgTurnaroundTime": 13.00,
+    "avgResponseTime": 4.25,
+    "cpuUtilization": 100.00,
+    "throughput": 0.15,
+    "totalTime": 26
+  },
+  {
+    "algorithm": "Round Robin (RR)",
+    "avgWaitingTime": 13.50,
+    "avgTurnaroundTime": 20.00,
+    "avgResponseTime": 3.00,
+    "cpuUtilization": 100.00,
+    "throughput": 0.15,
+    "totalTime": 26
+  }
+]
+  },
+    "simultaneous": {
+    "fcfs": {
+  "algorithm": "FCFS (First Come First Serve)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 8.00,
+  "avgTurnaroundTime": 12.75,
+  "avgResponseTime": 8.00,
+  "cpuUtilization": 100.00,
+  "throughput": 0.21,
+  "totalTime": 19,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 6, "priority": 2, "completionTime": 6, "turnaroundTime": 6, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 0, "burstTime": 3, "priority": 1, "completionTime": 9, "turnaroundTime": 9, "waitingTime": 6, "responseTime": 6},
+    {"id": 3, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 17, "turnaroundTime": 17, "waitingTime": 9, "responseTime": 9},
+    {"id": 4, "arrivalTime": 0, "burstTime": 2, "priority": 4, "completionTime": 19, "turnaroundTime": 19, "waitingTime": 17, "responseTime": 17}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 6},
+    {"processId": 2, "startTime": 6, "endTime": 9},
+    {"processId": 3, "startTime": 9, "endTime": 17},
+    {"processId": 4, "startTime": 17, "endTime": 19}
+  ]
+},
+    "sjf": {
+  "algorithm": "SJF (Shortest Job First - Non-Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 4.50,
+  "avgTurnaroundTime": 9.25,
+  "avgResponseTime": 4.50,
+  "cpuUtilization": 100.00,
+  "throughput": 0.21,
+  "totalTime": 19,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 6, "priority": 2, "completionTime": 11, "turnaroundTime": 11, "waitingTime": 5, "responseTime": 5},
+    {"id": 2, "arrivalTime": 0, "burstTime": 3, "priority": 1, "completionTime": 5, "turnaroundTime": 5, "waitingTime": 2, "responseTime": 2},
+    {"id": 3, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 19, "turnaroundTime": 19, "waitingTime": 11, "responseTime": 11},
+    {"id": 4, "arrivalTime": 0, "burstTime": 2, "priority": 4, "completionTime": 2, "turnaroundTime": 2, "waitingTime": 0, "responseTime": 0}
+  ],
+  "ganttChart": [
+    {"processId": 4, "startTime": 0, "endTime": 2},
+    {"processId": 2, "startTime": 2, "endTime": 5},
+    {"processId": 1, "startTime": 5, "endTime": 11},
+    {"processId": 3, "startTime": 11, "endTime": 19}
+  ]
+},
+    "priorityNonPreemptive": {
+  "algorithm": "Priority Scheduling (Non-Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 7.25,
+  "avgTurnaroundTime": 12.00,
+  "avgResponseTime": 7.25,
+  "cpuUtilization": 100.00,
+  "throughput": 0.21,
+  "totalTime": 19,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 6, "priority": 2, "completionTime": 9, "turnaroundTime": 9, "waitingTime": 3, "responseTime": 3},
+    {"id": 2, "arrivalTime": 0, "burstTime": 3, "priority": 1, "completionTime": 3, "turnaroundTime": 3, "waitingTime": 0, "responseTime": 0},
+    {"id": 3, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 17, "turnaroundTime": 17, "waitingTime": 9, "responseTime": 9},
+    {"id": 4, "arrivalTime": 0, "burstTime": 2, "priority": 4, "completionTime": 19, "turnaroundTime": 19, "waitingTime": 17, "responseTime": 17}
+  ],
+  "ganttChart": [
+    {"processId": 2, "startTime": 0, "endTime": 3},
+    {"processId": 1, "startTime": 3, "endTime": 9},
+    {"processId": 3, "startTime": 9, "endTime": 17},
+    {"processId": 4, "startTime": 17, "endTime": 19}
+  ]
+},
+    "priorityPreemptive": {
+  "algorithm": "Priority Scheduling (Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 7.25,
+  "avgTurnaroundTime": 12.00,
+  "avgResponseTime": 7.25,
+  "cpuUtilization": 100.00,
+  "throughput": 0.21,
+  "totalTime": 19,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 6, "priority": 2, "completionTime": 9, "turnaroundTime": 9, "waitingTime": 3, "responseTime": 3},
+    {"id": 2, "arrivalTime": 0, "burstTime": 3, "priority": 1, "completionTime": 3, "turnaroundTime": 3, "waitingTime": 0, "responseTime": 0},
+    {"id": 3, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 17, "turnaroundTime": 17, "waitingTime": 9, "responseTime": 9},
+    {"id": 4, "arrivalTime": 0, "burstTime": 2, "priority": 4, "completionTime": 19, "turnaroundTime": 19, "waitingTime": 17, "responseTime": 17}
+  ],
+  "ganttChart": [
+    {"processId": 2, "startTime": 0, "endTime": 3},
+    {"processId": 1, "startTime": 3, "endTime": 9},
+    {"processId": 3, "startTime": 9, "endTime": 17},
+    {"processId": 4, "startTime": 17, "endTime": 19}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Round Robin (RR)",
+  "timeQuantum": 3,
+  "avgWaitingTime": 7.75,
+  "avgTurnaroundTime": 12.50,
+  "avgResponseTime": 4.50,
+  "cpuUtilization": 100.00,
+  "throughput": 0.21,
+  "totalTime": 19,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 6, "priority": 2, "completionTime": 14, "turnaroundTime": 14, "waitingTime": 8, "responseTime": 0},
+    {"id": 2, "arrivalTime": 0, "burstTime": 3, "priority": 1, "completionTime": 6, "turnaroundTime": 6, "waitingTime": 3, "responseTime": 3},
+    {"id": 3, "arrivalTime": 0, "burstTime": 8, "priority": 3, "completionTime": 19, "turnaroundTime": 19, "waitingTime": 11, "responseTime": 6},
+    {"id": 4, "arrivalTime": 0, "burstTime": 2, "priority": 4, "completionTime": 11, "turnaroundTime": 11, "waitingTime": 9, "responseTime": 9}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 3},
+    {"processId": 2, "startTime": 3, "endTime": 6},
+    {"processId": 3, "startTime": 6, "endTime": 9},
+    {"processId": 4, "startTime": 9, "endTime": 11},
+    {"processId": 1, "startTime": 11, "endTime": 14},
+    {"processId": 3, "startTime": 14, "endTime": 19}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "FCFS (First Come First Serve)",
+    "avgWaitingTime": 8.00,
+    "avgTurnaroundTime": 12.75,
+    "avgResponseTime": 8.00,
+    "cpuUtilization": 100.00,
+    "throughput": 0.21,
+    "totalTime": 19
+  },
+  {
+    "algorithm": "SJF (Shortest Job First - Non-Preemptive)",
+    "avgWaitingTime": 4.50,
+    "avgTurnaroundTime": 9.25,
+    "avgResponseTime": 4.50,
+    "cpuUtilization": 100.00,
+    "throughput": 0.21,
+    "totalTime": 19
+  },
+  {
+    "algorithm": "Priority Scheduling (Non-Preemptive)",
+    "avgWaitingTime": 7.25,
+    "avgTurnaroundTime": 12.00,
+    "avgResponseTime": 7.25,
+    "cpuUtilization": 100.00,
+    "throughput": 0.21,
+    "totalTime": 19
+  },
+  {
+    "algorithm": "Priority Scheduling (Preemptive)",
+    "avgWaitingTime": 7.25,
+    "avgTurnaroundTime": 12.00,
+    "avgResponseTime": 7.25,
+    "cpuUtilization": 100.00,
+    "throughput": 0.21,
+    "totalTime": 19
+  },
+  {
+    "algorithm": "Round Robin (RR)",
+    "avgWaitingTime": 7.75,
+    "avgTurnaroundTime": 12.50,
+    "avgResponseTime": 4.50,
+    "cpuUtilization": 100.00,
+    "throughput": 0.21,
+    "totalTime": 19
+  }
+]
+  },
+    "heavyBurst": {
+    "fcfs": {
+  "algorithm": "FCFS (First Come First Serve)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 10.75,
+  "avgTurnaroundTime": 19.00,
+  "avgResponseTime": 10.75,
+  "cpuUtilization": 100.00,
+  "throughput": 0.12,
+  "totalTime": 33,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 15, "priority": 3, "completionTime": 15, "turnaroundTime": 15, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 2, "burstTime": 4, "priority": 1, "completionTime": 19, "turnaroundTime": 17, "waitingTime": 13, "responseTime": 13},
+    {"id": 3, "arrivalTime": 4, "burstTime": 2, "priority": 2, "completionTime": 21, "turnaroundTime": 17, "waitingTime": 15, "responseTime": 15},
+    {"id": 4, "arrivalTime": 6, "burstTime": 12, "priority": 4, "completionTime": 33, "turnaroundTime": 27, "waitingTime": 15, "responseTime": 15}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 15},
+    {"processId": 2, "startTime": 15, "endTime": 19},
+    {"processId": 3, "startTime": 19, "endTime": 21},
+    {"processId": 4, "startTime": 21, "endTime": 33}
+  ]
+},
+    "sjf": {
+  "algorithm": "SJF (Shortest Job First - Non-Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 10.25,
+  "avgTurnaroundTime": 18.50,
+  "avgResponseTime": 10.25,
+  "cpuUtilization": 100.00,
+  "throughput": 0.12,
+  "totalTime": 33,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 15, "priority": 3, "completionTime": 15, "turnaroundTime": 15, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 2, "burstTime": 4, "priority": 1, "completionTime": 21, "turnaroundTime": 19, "waitingTime": 15, "responseTime": 15},
+    {"id": 3, "arrivalTime": 4, "burstTime": 2, "priority": 2, "completionTime": 17, "turnaroundTime": 13, "waitingTime": 11, "responseTime": 11},
+    {"id": 4, "arrivalTime": 6, "burstTime": 12, "priority": 4, "completionTime": 33, "turnaroundTime": 27, "waitingTime": 15, "responseTime": 15}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 15},
+    {"processId": 3, "startTime": 15, "endTime": 17},
+    {"processId": 2, "startTime": 17, "endTime": 21},
+    {"processId": 4, "startTime": 21, "endTime": 33}
+  ]
+},
+    "priorityNonPreemptive": {
+  "algorithm": "Priority Scheduling (Non-Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 10.75,
+  "avgTurnaroundTime": 19.00,
+  "avgResponseTime": 10.75,
+  "cpuUtilization": 100.00,
+  "throughput": 0.12,
+  "totalTime": 33,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 15, "priority": 3, "completionTime": 15, "turnaroundTime": 15, "waitingTime": 0, "responseTime": 0},
+    {"id": 2, "arrivalTime": 2, "burstTime": 4, "priority": 1, "completionTime": 19, "turnaroundTime": 17, "waitingTime": 13, "responseTime": 13},
+    {"id": 3, "arrivalTime": 4, "burstTime": 2, "priority": 2, "completionTime": 21, "turnaroundTime": 17, "waitingTime": 15, "responseTime": 15},
+    {"id": 4, "arrivalTime": 6, "burstTime": 12, "priority": 4, "completionTime": 33, "turnaroundTime": 27, "waitingTime": 15, "responseTime": 15}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 15},
+    {"processId": 2, "startTime": 15, "endTime": 19},
+    {"processId": 3, "startTime": 19, "endTime": 21},
+    {"processId": 4, "startTime": 21, "endTime": 33}
+  ]
+},
+    "priorityPreemptive": {
+  "algorithm": "Priority Scheduling (Preemptive)",
+  "timeQuantum": 0,
+  "avgWaitingTime": 5.75,
+  "avgTurnaroundTime": 14.00,
+  "avgResponseTime": 4.25,
+  "cpuUtilization": 100.00,
+  "throughput": 0.12,
+  "totalTime": 33,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 15, "priority": 3, "completionTime": 21, "turnaroundTime": 21, "waitingTime": 6, "responseTime": 0},
+    {"id": 2, "arrivalTime": 2, "burstTime": 4, "priority": 1, "completionTime": 6, "turnaroundTime": 4, "waitingTime": 0, "responseTime": 0},
+    {"id": 3, "arrivalTime": 4, "burstTime": 2, "priority": 2, "completionTime": 8, "turnaroundTime": 4, "waitingTime": 2, "responseTime": 2},
+    {"id": 4, "arrivalTime": 6, "burstTime": 12, "priority": 4, "completionTime": 33, "turnaroundTime": 27, "waitingTime": 15, "responseTime": 15}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 2},
+    {"processId": 2, "startTime": 2, "endTime": 6},
+    {"processId": 3, "startTime": 6, "endTime": 8},
+    {"processId": 1, "startTime": 8, "endTime": 21},
+    {"processId": 4, "startTime": 21, "endTime": 33}
+  ]
+},
+    "roundRobin": {
+  "algorithm": "Round Robin (RR)",
+  "timeQuantum": 3,
+  "avgWaitingTime": 11.00,
+  "avgTurnaroundTime": 19.25,
+  "avgResponseTime": 2.75,
+  "cpuUtilization": 100.00,
+  "throughput": 0.12,
+  "totalTime": 33,
+  "idleTime": 0,
+  "processes": [
+    {"id": 1, "arrivalTime": 0, "burstTime": 15, "priority": 3, "completionTime": 30, "turnaroundTime": 30, "waitingTime": 15, "responseTime": 0},
+    {"id": 2, "arrivalTime": 2, "burstTime": 4, "priority": 1, "completionTime": 15, "turnaroundTime": 13, "waitingTime": 9, "responseTime": 1},
+    {"id": 3, "arrivalTime": 4, "burstTime": 2, "priority": 2, "completionTime": 11, "turnaroundTime": 7, "waitingTime": 5, "responseTime": 5},
+    {"id": 4, "arrivalTime": 6, "burstTime": 12, "priority": 4, "completionTime": 33, "turnaroundTime": 27, "waitingTime": 15, "responseTime": 5}
+  ],
+  "ganttChart": [
+    {"processId": 1, "startTime": 0, "endTime": 3},
+    {"processId": 2, "startTime": 3, "endTime": 6},
+    {"processId": 1, "startTime": 6, "endTime": 9},
+    {"processId": 3, "startTime": 9, "endTime": 11},
+    {"processId": 4, "startTime": 11, "endTime": 14},
+    {"processId": 2, "startTime": 14, "endTime": 15},
+    {"processId": 1, "startTime": 15, "endTime": 18},
+    {"processId": 4, "startTime": 18, "endTime": 21},
+    {"processId": 1, "startTime": 21, "endTime": 24},
+    {"processId": 4, "startTime": 24, "endTime": 27},
+    {"processId": 1, "startTime": 27, "endTime": 30},
+    {"processId": 4, "startTime": 30, "endTime": 33}
+  ]
+},
+    "comparison": [
+  {
+    "algorithm": "FCFS (First Come First Serve)",
+    "avgWaitingTime": 10.75,
+    "avgTurnaroundTime": 19.00,
+    "avgResponseTime": 10.75,
+    "cpuUtilization": 100.00,
+    "throughput": 0.12,
+    "totalTime": 33
+  },
+  {
+    "algorithm": "SJF (Shortest Job First - Non-Preemptive)",
+    "avgWaitingTime": 10.25,
+    "avgTurnaroundTime": 18.50,
+    "avgResponseTime": 10.25,
+    "cpuUtilization": 100.00,
+    "throughput": 0.12,
+    "totalTime": 33
+  },
+  {
+    "algorithm": "Priority Scheduling (Non-Preemptive)",
+    "avgWaitingTime": 10.75,
+    "avgTurnaroundTime": 19.00,
+    "avgResponseTime": 10.75,
+    "cpuUtilization": 100.00,
+    "throughput": 0.12,
+    "totalTime": 33
+  },
+  {
+    "algorithm": "Priority Scheduling (Preemptive)",
+    "avgWaitingTime": 5.75,
+    "avgTurnaroundTime": 14.00,
+    "avgResponseTime": 4.25,
+    "cpuUtilization": 100.00,
+    "throughput": 0.12,
+    "totalTime": 33
+  },
+  {
+    "algorithm": "Round Robin (RR)",
+    "avgWaitingTime": 11.00,
+    "avgTurnaroundTime": 19.25,
+    "avgResponseTime": 2.75,
+    "cpuUtilization": 100.00,
+    "throughput": 0.12,
+    "totalTime": 33
+  }
+]
+  }
+  }
+}

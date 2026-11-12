@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART-TRAFFIC : Intelligent Intersection & CPU Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div>
+            <h1>SMART-TRAFFIC</h1>
+            <p class="subtitle">Operating System Scheduling Algorithms Applied to a 4-Way Traffic Intersection</p>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-primary" onclick="openCustomModal()">✏️ Custom Input / Manual Mode</button>
+            <div class="status-badge" id="backendStatus">C++ Engine: Active</div>
+        </div>
+    </div>
+</header>
+
+<div class="tabs-nav">
+    <button class="tab-btn active" onclick="switchTab('trafficTab')">🚦 Traffic Intersection Simulator</button>
+    <button class="tab-btn" onclick="switchTab('cpuTab')">💻 CPU Scheduling & Gantt Charts</button>
+    <button class="tab-btn" onclick="switchTab('benchmarkTab')">📊 Performance Comparison & Benchmarks</button>
+</div>
+
+<main class="container">
+
+    <!-- ============================================================== -->
+    <!-- TAB 1: TRAFFIC INTERSECTION SIMULATOR -->
+    <!-- ============================================================== -->
+    <section id="trafficTab" class="tab-content active">
+        <!-- Controls Bar -->
+        <div class="controls-panel card">
+            <div class="control-group">
+                <label for="scenarioSelect"><strong>Scenario / Data Preset:</strong></label>
+                <select id="scenarioSelect" onchange="onScenarioChange()">
+                    <option value="morningRush">Morning Rush Hour Corridor (Heavy North: 22 veh, South: 18 veh)</option>
+                    <option value="balanced">Balanced Intersection (Equal 4-Way Traffic: 6 veh each)</option>
+                    <option value="emergency">Emergency Preemption (Ambulance on East approach)</option>
+                    <option value="custom">Custom / User-Defined Traffic Queue</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="trafficAlgoSelect"><strong>Algorithm:</strong></label>
+                <select id="trafficAlgoSelect" onchange="onTrafficAlgoChange()">
+                    <option value="priority">Priority Scheduling (Density + Wait + Aging + Emergency)</option>
+                    <option value="fcfs">FCFS (First Come First Serve)</option>
+                    <option value="roundRobin">Round Robin (Time-Sliced Green Signal)</option>
+                    <option value="edf">Earliest Deadline First (EDF)</option>
+                </select>
+            </div>
+
+            <div class="sim-actions">
+                <button class="btn btn-primary" id="btnPlay" onclick="togglePlaySimulation()">▶ Start</button>
+                <button class="btn btn-secondary" onclick="stepSimulation()">⏭ Step (+1s)</button>
+                <button class="btn btn-warning" onclick="resetSimulation()">↺ Reset</button>
+                <span class="timer-display">Clock: <strong id="simClock">0</strong> s</span>
+            </div>
+        </div>
+
+        <!-- Active Scenario Description Banner -->
+        <div class="info-banner" id="scenarioInfoBanner">
+            <span class="info-icon">ℹ️</span>
+            <span id="scenarioDescText">Showing <strong>Morning Rush Hour Corridor</strong>: Asymmetric demand where North (22 veh) and South (18 veh) dominate East and West approaches.</span>
+        </div>
+
+        <!-- Two Columns: Intersection View & Timeline -->
+        <div class="grid-2col">
+            <!-- Left: 4-Way Intersection Visualizer -->
+            <div class="card intersection-card">
+                <h3>Four-Way Intersection Visualizer</h3>
+                <div class="intersection-wrapper">
+                    <!-- North Approach -->
+                    <div class="approach approach-north">
+                        <div class="approach-info">
+                            <strong>NORTH</strong>
+                            <span class="veh-count" id="vehNorth">Queue: 0 veh</span>
+                            <span class="badge-emerg hidden" id="emergNorth">🚨 EMERGENCY</span>
+                        </div>
+                        <div class="traffic-light" id="lightNorth">
+                            <span class="light red active"></span>
+                            <span class="light yellow"></span>
+                            <span class="light green"></span>
+                        </div>
+                    </div>
+
+                    <!-- Middle Row: West Approach, Center Cross, East Approach -->
+                    <div class="intersection-middle">
+                        <div class="approach approach-west">
+                            <div class="approach-info">
+                                <strong>WEST</strong>
+                                <span class="veh-count" id="vehWest">Queue: 0 veh</span>
+                                <span class="badge-emerg hidden" id="emergWest">🚨 EMERGENCY</span>
+                            </div>
+                            <div class="traffic-light light-horiz" id="lightWest">
+                                <span class="light red active"></span>
+                                <span class="light yellow"></span>
+                                <span class="light green"></span>
+                            </div>
+                        </div>
+
+                        <div class="intersection-center" id="intersectionCenter">
+                            <div class="intersection-hub">
+                                <span id="centerStatus">ALL-RED CLEARANCE</span>
+                            </div>
+                        </div>
+
+                        <div class="approach approach-east">
+                            <div class="traffic-light light-horiz" id="lightEast">
+                                <span class="light green"></span>
+                                <span class="light yellow"></span>
+                                <span class="light red active"></span>
+                            </div>
+                            <div class="approach-info">
+                                <strong>EAST</strong>
+                                <span class="veh-count" id="vehEast">Queue: 0 veh</span>
+                                <span class="badge-emerg hidden" id="emergEast">🚨 EMERGENCY</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- South Approach -->
+                    <div class="approach approach-south">
+                        <div class="traffic-light" id="lightSouth">
+                            <span class="light green"></span>
+                            <span class="light yellow"></span>
+                            <span class="light red active"></span>
+                        </div>
+                        <div class="approach-info">
+                            <strong>SOUTH</strong>
+                            <span class="veh-count" id="vehSouth">Queue: 0 veh</span>
+                            <span class="badge-emerg hidden" id="emergSouth">🚨 EMERGENCY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal Safety Indicator -->
+                <div class="safety-banner">
+                    <span class="safety-shield">🛡️ Signal Safety Active:</span>
+                    <span>Zero Conflicting Movements • Yellow (2s) & All-Red (1s) Clearance Enforced</span>
+                </div>
+            </div>
+
+            <!-- Right: Traffic Timeline & Metrics -->
+            <div class="card">
+                <h3>Signal Execution Timeline</h3>
+                <div class="timeline-container" id="trafficTimelineBar"></div>
+
+                <div class="metrics-grid" id="trafficMetricsCards">
+                    <div class="metric-box">
+                        <span class="label">Vehicles Served</span>
+                        <strong class="value" id="tmVehicles">0</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Avg Delay (WT)</span>
+                        <strong class="value" id="tmAvgWait">0.0 s</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Max Queue Wait</span>
+                        <strong class="value" id="tmMaxWait">0 s</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Deadline Misses</span>
+                        <strong class="value" id="tmMisses">0</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Throughput</span>
+                        <strong class="value" id="tmThroughput">0.0 v/s</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Green Utilization</span>
+                        <strong class="value" id="tmUtil">0.0 %</strong>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 1.5rem;">Completed Task Log</h4>
+                <div class="table-scroll">
+                    <table class="data-table" id="trafficTaskTable">
+                        <thead>
+                            <tr>
+                                <th>TID</th>
+                                <th>Road</th>
+                                <th>Arrival</th>
+                                <th>Vehicles</th>
+                                <th>Emergency</th>
+                                <th>Deadline</th>
+                                <th>Completion</th>
+                                <th>Delay</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 2: CPU SCHEDULING & GANTT CHARTS -->
+    <!-- ============================================================== -->
+    <section id="cpuTab" class="tab-content">
+        <div class="controls-panel card">
+            <div class="control-group">
+                <label for="cpuWorkloadSelect"><strong>Workload Dataset:</strong></label>
+                <select id="cpuWorkloadSelect" onchange="renderCPUView()">
+                    <option value="standard">Standard Diverse Processes (P1..P4: Staggered Arrivals & Priorities)</option>
+                    <option value="simultaneous">Simultaneous Arrival Batch (All P1..P4 arrive at t=0)</option>
+                    <option value="heavyBurst">Heavy Long-Burst Workload (Demonstrates Preemption)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="cpuAlgoSelect"><strong>Algorithm:</strong></label>
+                <select id="cpuAlgoSelect" onchange="renderCPUView()">
+                    <option value="fcfs">FCFS (First Come First Serve)</option>
+                    <option value="sjf">SJF (Shortest Job First - Non-Preemptive)</option>
+                    <option value="priorityNonPreemptive">Priority (Non-Preemptive)</option>
+                    <option value="priorityPreemptive">Priority (Preemptive)</option>
+                    <option value="roundRobin">Round Robin (Time Quantum = 3)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <span>Priority Rule: <strong>Lower value = Higher priority (1 > 2 > 3)</strong></span>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 1.5rem;">
+            <h3>CPU Gantt Chart</h3>
+            <p class="section-desc">Interactive execution timeline illustrating process allocations and CPU idle periods.</p>
+            <div class="gantt-chart-container" id="cpuGanttContainer"></div>
+        </div>
+
+        <div class="grid-2col">
+            <div class="card">
+                <h3>Process Scheduling Metrics Table</h3>
+                <div class="table-scroll">
+                    <table class="data-table" id="cpuProcessTable">
+                        <thead>
+                            <tr>
+                                <th>PID</th>
+                                <th>Arrival (AT)</th>
+                                <th>Burst (BT)</th>
+                                <th>Priority</th>
+                                <th>Completion (CT)</th>
+                                <th>Turnaround (TAT)</th>
+                                <th>Waiting (WT)</th>
+                                <th>Response (RT)</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>CPU Performance Summary</h3>
+                <div class="metrics-grid" id="cpuMetricsSummary">
+                    <div class="metric-box">
+                        <span class="label">Avg Waiting Time</span>
+                        <strong class="value" id="cpuAvgWT">0.0</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Avg Turnaround Time</span>
+                        <strong class="value" id="cpuAvgTAT">0.0</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Avg Response Time</span>
+                        <strong class="value" id="cpuAvgRT">0.0</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">CPU Utilization</span>
+                        <strong class="value" id="cpuUtil">0.0 %</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Throughput</span>
+                        <strong class="value" id="cpuThroughput">0.0 p/t</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="label">Total Schedule Time</span>
+                        <strong class="value" id="cpuTotalTime">0</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TAB 3: PERFORMANCE BENCHMARK & COMPARISON -->
+    <!-- ============================================================== -->
+    <section id="benchmarkTab" class="tab-content">
+        <div class="card" style="margin-bottom: 1.5rem;">
+            <h3>Traffic Scheduling Algorithms Comparison</h3>
+            <p class="section-desc">Dynamic evaluation of all 4 traffic algorithms on identical traffic demand for the active scenario.</p>
+            <div class="table-scroll">
+                <table class="data-table" id="trafficCompTable">
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Vehicles Served</th>
+                            <th>Avg Delay (s)</th>
+                            <th>Max Delay (s)</th>
+                            <th>Emergency Delay</th>
+                            <th>Deadline Misses</th>
+                            <th>Throughput</th>
+                            <th>Signal Utilization</th>
+                            <th>Total Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="chart-section" style="margin-top: 1.5rem;">
+                <h4>Average Vehicle Delay Comparison (Lower is Better)</h4>
+                <div class="bar-chart" id="trafficDelayBars"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>CPU Scheduling Algorithms Comparison</h3>
+            <p class="section-desc">Evaluation of all 5 CPU algorithms on identical process workloads for the active dataset.</p>
+            <div class="table-scroll">
+                <table class="data-table" id="cpuCompTable">
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Avg Waiting Time</th>
+                            <th>Avg Turnaround Time</th>
+                            <th>Avg Response Time</th>
+                            <th>CPU Utilization</th>
+                            <th>Throughput</th>
+                            <th>Total Schedule Time</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="chart-section" style="margin-top: 1.5rem;">
+                <h4>Average Waiting Time Comparison (Lower is Better)</h4>
+                <div class="bar-chart" id="cpuWaitBars"></div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============================================================== -->
+<!-- MODAL: MANUAL INPUT / CUSTOM WORKLOAD BUILDER -->
+<!-- ============================================================== -->
+<div class="modal-overlay hidden" id="customModal">
+    <div class="modal-content card">
+        <div class="modal-header">
+            <h3>Custom Simulation Input / Manual Mode</h3>
+            <button class="close-btn" onclick="closeCustomModal()">×</button>
+        </div>
+        <div class="modal-body">
+            <h4>Customize 4-Way Traffic Demand:</h4>
+            <div class="input-grid">
+                <div class="input-field">
+                    <label>North Vehicles (Corridor):</label>
+                    <input type="number" id="inVehNorth" value="20" min="0" max="50">
+                    <label><input type="checkbox" id="inEmergNorth"> Emergency Vehicle</label>
+                </div>
+                <div class="input-field">
+                    <label>South Vehicles:</label>
+                    <input type="number" id="inVehSouth" value="12" min="0" max="50">
+                    <label><input type="checkbox" id="inEmergSouth"> Emergency Vehicle</label>
+                </div>
+                <div class="input-field">
+                    <label>East Vehicles:</label>
+                    <input type="number" id="inVehEast" value="4" min="0" max="50">
+                    <label><input type="checkbox" id="inEmergEast"> Emergency Vehicle</label>
+                </div>
+                <div class="input-field">
+                    <label>West Vehicles (Side Street):</label>
+                    <input type="number" id="inVehWest" value="3" min="0" max="50">
+                    <label><input type="checkbox" id="inEmergWest"> Emergency Vehicle</label>
+                </div>
+            </div>
+
+            <div style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center;">
+                <label>Round Robin Green Quantum (s):</label>
+                <input type="number" id="inTrafficQuantum" value="6" min="2" max="20" style="width: 70px;">
+                <button class="btn btn-secondary" onclick="generateRandomCustomTraffic()">🎲 Randomize Traffic Demand</button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeCustomModal()">Cancel</button>
+            <button class="btn btn-primary" onclick="applyCustomTrafficData()">Apply & Simulate</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <p><strong>SMART-TRAFFIC</strong> : CSE Final End-Semester Project</p>
+        <p>Implemented in C++17 (Algorithm Core & Metrics) • Visualized via Modern Web Interface</p>
+    </div>
+</footer>
+
+<script src="script.js?v=2.1"></script>
+</body>
+</html>
